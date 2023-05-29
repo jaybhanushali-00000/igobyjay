@@ -4,7 +4,7 @@ import classes from './app.css';
 
 function App() {
 
-  let ENDPOINT ="http://0.0.0.0/";
+  let ENDPOINT ="https://0.0.0.0/";
 const[num1,setNum1] = useState();
 const[num2,setNum2] = useState();
 const[num3,setNum3] = useState();
