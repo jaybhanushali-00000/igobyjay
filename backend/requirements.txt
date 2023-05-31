@@ -1,0 +1,6 @@
+#tensorflow
+numpy
+#CORSMiddleware
+fastapi
+pandas
+uvicorn
