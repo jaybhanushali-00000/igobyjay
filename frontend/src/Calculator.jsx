@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const Calculator=() => {
 
-let ENDPOINT ="https://igobyjay-1-omvapgz38-jaybhanushali-00000.vercel.app/";
+let ENDPOINT ="http://172.18.0.86/";
 const[num1,setNum1] = useState();
 const[num2,setNum2] = useState();
 const[num3,setNum3] = useState();
