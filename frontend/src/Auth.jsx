@@ -5,7 +5,7 @@ import { Calculator } from "./Calculator";
 
 export const Auth=(props ) => {
 
-    let ENDPOINT ="https://igobyjay-1-8jkeqb392-jaybhanushali-00000.vercel.app/";
+    let ENDPOINT ="https://637a-103-232-241-147.in.ngrok.io/";
     const [user_id,setUSR] = useState();
     const [password,setPass] = useState();
     const [b,setB] = useState(1);
