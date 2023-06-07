@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const Calculator=() => {
 
-let ENDPOINT ="https://2fbb-103-232-241-147.ngrok-free.app/";
+let ENDPOINT ="https://30b4-103-232-241-147.ngrok-free.app/";
 const[num1,setNum1] = useState();
 const[num2,setNum2] = useState();
 const[num3,setNum3] = useState();
