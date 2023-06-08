@@ -5,7 +5,7 @@ import { Calculator } from "./Calculator";
 
 export const Auth=(props ) => {
 
-    let ENDPOINT ="https://30b4-103-232-241-147.ngrok-free.app/";
+    let ENDPOINT ="http://68.183.86.221/";
     const [user_id,setUSR] = useState();
     const [password,setPass] = useState();
     const [b,setB] = useState(1);
