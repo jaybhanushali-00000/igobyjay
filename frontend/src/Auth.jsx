@@ -5,7 +5,7 @@ import { Calculator } from "./Calculator";
 
 export const Auth=(props ) => {
 
-    let ENDPOINT ="https://igobyjay-1.vercel.app/";
+    let ENDPOINT ="https://igobyjay.hopto.org/";
     const [user_id,setUSR] = useState();
     const [password,setPass] = useState();
     const [b,setB] = useState(1);
