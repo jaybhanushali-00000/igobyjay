@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+      body {
+        flex-direction: row;
+        align-items: flex-start;
+        /* padding: 245px 565px; */
+        gap: 10px;
+
+        position: absolute;
+        width: 1727px;
+        height: 1117px;
+        left: 0px;
+        top: 0px;
+        display: grid;
+        place-items: center;
+
+        background-image: url("background.png");
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+
+      .redrectangle {
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 597px;
+        height: 627px;
+
+        background: rgba(240, 58, 71, 0.9);
+        box-shadow: 10px 10px 40px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 70px;
+        animation: heartbeat 4s ease-in-out infinite;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1.03);
+        }
+
+        80% {
+          transform: scale(1);
+        }
+      }
+
+      .button {
+        position: absolute;
+        width: 313px;
+        height: 73px;
+        left: 150px;
+        top: 80%;
+        transition: transform 0.2s ease;
+        transform-style: preserve-3d;
+      }
+
+      .login {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 73px;
+        color: #85f3f1;
+        font-family: "Poppins";
+        font-size: 40px;
+        background-color: #151515;
+        border-radius: 25px;
+      }
+
+      .button:active {
+        width: 313px;
+        transform: rotateX(90deg) scale(1.06);
+        backface-visibility: hidden;
+        object-fit: cover;
+      }
+      .login-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotateX(90deg);
+        object-fit: cover;
+        background-color: #151515;
+        border-radius: 25px;
+      }
+
+      .img1 {
+        position: absolute;
+        width: 313px;
+        height: 73px;
+        object-fit: cover;
+        object-position: 0px -180px;
+      }
+
+      .img2 {
+        position: absolute;
+        width: 313px;
+        height: 73px;
+        object-fit: cover;
+        object-position: 0px -180px;
+        animation: animate 4s ease-in-out infinite;
+      }
+
+      @keyframes animate {
+        0%,
+        100% {
+          height: 0%;
+        }
+        50% {
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="redrectangle">
+      <div class="button">
+        <button class="login" onclick="this.classlist.toggle('login-back') ">
+          Authenticate
+        </button>
+        <div class="login-back">
+          <img class="img1" src="fingerPrint_01.png" />
+          <img class="img2" src="fingerPrint_02.png" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const btn = document.querySelector(".login");
+      btn.classList.toggle(".login-back");
+    </script>
+  </body>
+</html>

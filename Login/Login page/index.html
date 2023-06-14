@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      function toggle_div_function(id) {
+        var divelement = document.getElementById(id);
+        var divelement2 = document.getElementById("sechide2");
+        divelement.style.display = "none";
+        divelement2.style.display = "block";
+      }
+
+      function disbale_div_function(id) {
+        var divelement = document.getElementById(id);
+        var divelement1 = document.getElementById("sechide1");
+        divelement.style.display = "none";
+        divelement1.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="redrectangle">
+        <h1>Login</h1>
+        <h2>Username</h2>
+        <input
+          type="text"
+          id="username"
+          class="username"
+          placeholder="yourname"
+        />
+        <h2>Passcode</h2>
+        <input
+          type="passwaord"
+          id="password"
+          class="passcode"
+          placeholder="webforml"
+        />
+
+        <div class="button" id="button">
+          <div
+            class="back"
+            id="sechide2"
+            onclick="disbale_div_function('sechide2');"
+          >
+            <img class="img1" src="fingerPrint_01.png" />
+            <img class="img2" src="fingerPrint_02.png" />
+          </div>
+
+          <button
+            id="sechide1"
+            type="button"
+            onClick="toggle_div_function('sechide1');"
+            class="front"
+          >
+            Authenticate
+          </button>
+          <a id="calculator" href="calculator.html"></a>
+        </div>
+      </div>
+      <div class="incorrect" id="incorrect">Invalid Credentials</div>
+    </div>
+
+    <script>
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+      const button = document.getElementById("button");
+      const calc = document.getElementById("calculator");
+      let url = "https://igobyjay.hopto.org/";
+      var promise = 0;
+      var verifier = 0;
+
+      async function auth(usrname, passwd) {
+        var faltu = 0;
+        const response = await fetch(url + "auth/" + usrname + "_" + passwd);
+        const result = await response.json();
+        const meow = result["value"];
+        return meow;
+        // return await response.json();
+      }
+
+      function success() {
+        console.log("hello");
+        window.location.href = "calculator.html";
+      }
+
+      function invalid() {
+        // window.location.href = "calculator.html";
+        const invalid = document.getElementById("incorrect");
+        const front = document.getElementById("sechide1");
+        const finger2 = document.getElementById("sechide2");
+        finger2.style.display = "none";
+        front.style.display = "block";
+        invalid.style.display = "grid";
+      }
+
+      button.addEventListener("click", async () => {
+        // verifier = auth(username.value, password.value);
+        verifier = await auth(username.value, password.value);
+        console.log(verifier);
+        verifier === 1 ? success() : invalid();
+      });
+    </script>
+  </body>
+</html>
